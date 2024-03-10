@@ -52,7 +52,7 @@ Before running the project, ensure that the following software tools and depende
 
 Follow these steps to set up and run the project on your local machine:
 
-1. **Extract Folder:** Extract the project folder from the compressed file.
+1. **Download git repositary:**
 
 2. **Backend Setup:**
    - Open the backend folder in VS Code or any preferred text editor.
