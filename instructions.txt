@@ -14,7 +14,7 @@ Step 1 : Extract Folder
 
 Step 2 : Open backend folder into VS Code.
 
-PLEASE CONFIGURE ENVIROMENT VARIABLES IN .env folder. I GIVE AN EXAMPLE .env.example file.
+PLEASE CONFIGURE ENVIROMENT VARIABLES IN backend folder  . I GIVE AN EXAMPLE .env.example file. You need to add .env file and set this all variables.
 
 Step 3 : Open terminal 
 
