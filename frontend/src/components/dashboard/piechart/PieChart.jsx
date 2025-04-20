@@ -24,9 +24,9 @@ function PieChart({title,labels,values,label}) {
         label: label,
         data: values,
         backgroundColor: [
-            '#4cceac',
+            '#1B3C3F',
             '#6870fa',
-            '#3e4396',
+            '#1B3C3F',
             ' #FF5A5F'
         ],
         borderColor: [

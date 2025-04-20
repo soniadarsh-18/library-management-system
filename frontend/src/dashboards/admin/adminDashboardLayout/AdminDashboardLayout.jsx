@@ -23,7 +23,7 @@ const menu = [
     listItems: [
       {
         id: 1,
-        text: "Dashbaord",
+        text: "Dashboard",
         link: "/admin/dashboard",
         icon: <MdDashboard />,
       },
@@ -75,18 +75,6 @@ const menu = [
         link: "manage-teachers",
         icon: <FaUsers />,
       },
-      {
-        id: 3,
-        text: "Batches",
-        link: "manage-batches",
-        icon: <FaBook />,
-      },
-      {
-        id: 4,
-        text: "Departements",
-        link: "manage-departements",
-        icon: <BiCategoryAlt />,
-      },
     ],
   },
   {
@@ -97,12 +85,6 @@ const menu = [
         id: 1,
         text: "Books",
         link: "manage-books",
-        icon: <FaBook />,
-      },
-      {
-        id: 4,
-        text: "EBooks",
-        link: "manage-ebooks",
         icon: <FaBook />,
       },
       {

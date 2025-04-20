@@ -50,14 +50,14 @@ class StudentController {
       /* SEND WELCOME MAIL TO TEACHER AND ASK TO CHANGE THEIR PASSWORD */
       await sendMail({
         to: req.body.email,
-        subject: `Welcome to GGC Library Management System - Password Reset Required`,
+        subject: `Welcome to VIDYA BHUSHAN Management System - Password Reset Required`,
         text: `Dear ${req.body.name},
-                    Welcome to the GGC Library Management System! Your account has been created by our admin.
+                    Welcome to the VIDYA BHUSHAN Management System! Your account has been created by our admin.
                     Login Credentials:
                     Username/Email: ${req.body.email}
                     Default Password: ${password}
                     You can change your password by login into the system by using above credentials.
-                    Thank you for using GGC Library Management System.
+                    Thank you for using VIDYA BHUSHAN Management System.
                     `,
       });
     } catch (error) {

@@ -135,6 +135,7 @@ class TransactionController {
     if (error) {
       return next(error);
     }
+
     /* CHECK USER IS VALID OR NOT */
     /* I VALIDATE LIMIT OF ISSUED BOOK BY SPECIFIC USER ON FRONTEND AND ALSO BOOK */
     try {
@@ -142,6 +143,7 @@ class TransactionController {
       if (!user) {
         return next(ErrorHandlerService.notFound("User Not Found"));
       }
+
       const book = await BookModel.findById(req.body.bookID);
       if (!book) {
         return next(ErrorHandlerService.notFound("Book Not Found"));
@@ -151,22 +153,21 @@ class TransactionController {
       if (book.status === "Issued" || book.status === "Lost") {
         return next(
           ErrorHandlerService.badRequest(
-            `${
-              book.status === "Issued"
-                ? "OOPS ! Book is already Issued"
-                : "OOPS ! This book is lost!"
+            `${book.status === "Issued"
+              ? "OOPS ! Book is already Issued"
+              : "OOPS ! This book is lost!"
             }`
           )
         );
       }
-      /* CHECK BOOK STATUS IS RESERVED . THEN CHECK IF SAME STUDENT WANT TO ISSUE BOOK THEN REMOVE BOOK FROM RESERVATION  */
+
+      /* CHECK BOOK STATUS IS RESERVED. THEN CHECK IF SAME STUDENT WANTS TO ISSUE BOOK THEN REMOVE BOOK FROM RESERVATION */
       if (book.status === "Reserved") {
         const reservedBook = await ReservationModel.findOne({
           book: book._id,
         }).populate("user");
-        // console.log(reservedBook);
+
         if (user.email === reservedBook?.user?.email) {
-          // console.log("Same user reserved book");
           await reservedBook.deleteOne();
         } else {
           return next(
@@ -175,17 +176,17 @@ class TransactionController {
         }
       }
 
-      /* SET DUE DATE ACCORDING TO USER ROLE : STUDENT ALLOW 7 DAYS AND TEACHERS ALLOW 10 DAYS */
+      /* SET DUE DATE ACCORDING TO USER ROLE : STUDENT ALLOWED 7 DAYS AND TEACHERS ALLOWED 10 DAYS */
       const currentDate = new Date();
       const dueDate = new Date(currentDate);
       dueDate.setDate(
         currentDate.getDate() +
-          (user.role === "Student"
-            ? NUMBER_OF_DAYS_OF_STUDENT
-            : NUMBER_OF_DAYS_OF_TEACHER_OR_HOD)
+        (user.role === "Student"
+          ? NUMBER_OF_DAYS_OF_STUDENT
+          : NUMBER_OF_DAYS_OF_TEACHER_OR_HOD)
       );
 
-      /* ISSUED BOOK */
+      /* ISSUE BOOK */
       const transaction = new TransactionModel({
         user: user._id,
         book: book._id,
@@ -195,14 +196,37 @@ class TransactionController {
         dueDate,
       });
       await transaction.save();
-      /* CHANGE STAUTUS OF BOOK  */
+
+      /* ✅ SEND EMAIL */
+      await sendMail({
+        to: user.email,
+        subject: "Book Issued Successfully",
+        text: `Dear ${user.name},
+
+The book titled "${book.title}" has been successfully issued to you from the VIDYA BHUSHAN Library Management System.
+
+📘 Book Details:
+- Title: ${book.title}
+- Author: ${book.author}
+- ISBN: ${book.ISBN}
+- Due Date: ${dueDate.toDateString()}
+
+Please return the book on or before the due date to avoid any fines.
+
+Regards,
+VIDYA BHUSHAN LMS`
+      });
+
+      /* CHANGE STATUS OF BOOK */
       book.status = "Issued";
       await book.save();
+
       return res.status(200).json({ msg: "Book Issued Successfully !" });
     } catch (error) {
       next(error);
     }
   }
+
 
   /* SEARCH USER AND ITS TRANSACTION RECORD AS WELL AS NUMBER OF  ISSUED BOOK */
   async userInfo(req, res, next) {
@@ -497,19 +521,17 @@ class TransactionController {
       await sendMail({
         to: transaction.user.email,
         subject: "Renewal Request Accepted",
-        text: `We hope this email finds you well. We wanted to inform you about the status of your recent renewal request for the book titled ${
-          transaction.book.title
-        }.
-        ${
-          renewalStatus === "Accepted"
+        text: `We hope this email finds you well. We wanted to inform you about the status of your recent renewal request for the book titled ${transaction.book.title
+          }.
+        ${renewalStatus === "Accepted"
             ? `Your renewal request has been accepted, and your new due date is ${transaction.dueDate}.`
             : `We regret to inform you that your renewal request has been rejected.`
-        }
+          }
 
         Thank you for using our library services.
 
         Best regards,
-        GGC Library Management System Admin
+        VIDYA BHUSHAN Management System Admin
           `,
       });
 
@@ -756,7 +778,7 @@ class TransactionController {
       return res
         .status(200)
         .json({ message: "Book UnReserved Successfully !", reservedBooks });
-    } catch (error) {}
+    } catch (error) { }
   }
 
   async renewRequest(req, res, next) {

@@ -37,7 +37,7 @@ function BarChart({title,labels,values,label}) {
       {
         label: label,
         data: values,
-        backgroundColor: '#4cceac',
+        backgroundColor: '#1B3C3F',
       }
     ]
   };

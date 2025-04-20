@@ -52,35 +52,6 @@ const UserHome = () => {
           link={"borrowed-books"}
         />
       </div>
-
-      {/* BAR CHART */}
-      <div className="chart__wrapper">
-        <div className="barchart__container">
-          <BarChart
-            title="NUMBER OF BORROWED BOOKS CHART"
-            labels={
-              data?.last12MonthsData &&
-              Object.keys(data?.last12MonthsData).reverse()
-            }
-            values={
-              data?.last12MonthsData &&
-              Object.values(data?.last12MonthsData).reverse()
-            }
-            label="BORROWED BOOKS"
-          />
-        </div>
-        <div className="piechart__container">
-          <PieChart
-            labels={
-              data?.categoryCounts &&
-              Object.keys(data?.categoryCounts).reverse()
-            }
-            values={data?.categoryCounts && Object.values(data?.categoryCounts)}
-            title={"CATEGORY DISTRIBUATION CHART"}
-            label="BORROWED BOOKS"
-          />
-        </div>
-      </div>
     </div>
   );
 };

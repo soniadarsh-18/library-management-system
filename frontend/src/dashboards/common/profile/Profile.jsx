@@ -100,15 +100,7 @@ const Profile = () => {
                   <td>{user?.rollNumber}</td>
                 </tr>
 
-                <tr>
-                  <th>Batch</th>
-                  <td>{user?.batch?.name} ({user?.batch?.startingYear} - {user?.batch?.endingYear})</td>
-                </tr>
-
-                <tr>
-                  <th>Departement</th>
-                  <td>{user?.departement?.name}</td>
-                </tr>
+                
               </>
             )}
           </table>

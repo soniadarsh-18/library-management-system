@@ -20,7 +20,7 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #e0e0e0;
+  background: #1B3C3F;
 }
 
 /* Handle */
@@ -322,11 +322,11 @@ body {
   tbody {
     tr {
       &:nth-child(even) {
-        background-color: #101624;
+        background-color: lightgray;
       }
 
       &:hover {
-        background-color: #0c101b;
+        background-color: #ffffff;
       }
     }
   }

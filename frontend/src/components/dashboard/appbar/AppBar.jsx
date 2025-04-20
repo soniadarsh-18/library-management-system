@@ -28,22 +28,14 @@ function AppBar({ open, setOpen }) {
 
         {/* logo */}
         <Link to="/" className="logo text__primary">
-          <GiBookAura className="logo__icon" />
-          <span>GGC Library</span>
+          <span>VIDYA BHUSHAN</span>
         </Link>
       </div>
 
       {/* righside icons and profile */}
       <div className="right">
 
-      <button
-            className="btn__icon text__color "
-            onClick={() => {
-              dispatch(toggleTheme());
-            }}
-          >
-            {theme === "dark" ? <FaRegMoon /> : <FiSun />}
-          </button>
+     
       </div>
     </div>
   );

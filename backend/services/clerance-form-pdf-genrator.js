@@ -18,7 +18,7 @@ async function generateClearanceForm(data, fileName) {
   /* ################### ADD MARGIN IN PAGES ##################### */
   const distanceMargin = 10;
   doc
-    .fillAndStroke("#4cceac")
+    .fillAndStroke("#1B3C3F")
     .lineWidth(10)
     .lineJoin("round")
     .rect(

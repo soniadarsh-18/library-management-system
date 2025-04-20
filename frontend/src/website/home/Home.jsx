@@ -40,7 +40,7 @@ const Home = () => {
     <div className="bg text__color">
       {/* Hero Section */}
       <section className="hero ">
-        <h1>Welcomet to Govt. Graduate College,Jhelum Library</h1>
+        <h1>Welcome to VIDYA BHUSHAN – Your Gateway to Knowledge.</h1>
         <span className="subheading">
           Explore our vast collection of books and resources.
         </span>
@@ -55,23 +55,18 @@ const Home = () => {
       <section className="welcome">
         <div className="left">
           <div className="heading">
-            <h1>Welcome Message </h1>
+            <h1>Welcome to VIDYA BHUSHAN 📚</h1>
           </div>
           <p>
-            Welcome to the Govt. Graduate College, Jhelum Library Management
-            System !
+            Step into the digital world of knowledge at Govt. Graduate College, Jhelum – powered by <strong>VIDYA BHUSHAN</strong>, your all-in-one Library Management System!
           </p>
           <p>
-            Our modern, fully automated college library is undoubtedly a
-            state-of-the-art Information Resource Center which fulfills
-            ever-evolving needs of our academic clientele. We are dedicated to
-            support the curriculum and educational mission of the college. The
-            aim of the GGC Library is to deliver the best print, digital and
-            online information resources and reference services to support your
-            teaching, learning, and research activities. We also provide
-            conducive environment and wonderful spaces for research, study and
-            collaboration.
+            Our fully automated, smart library isn’t just a place – it’s your personal academic ally. Designed to evolve with your learning needs, VIDYA BHUSHAN connects you with a vast world of print, digital, and online resources, anytime, anywhere.
           </p>
+          <p>
+            Whether you're diving into research, prepping for exams, or just exploring, VIDYA BHUSHAN offers a seamless, comfortable, and collaborative space built for students, teachers, and knowledge seekers alike.
+          </p>
+
         </div>
 
         <div className="right">

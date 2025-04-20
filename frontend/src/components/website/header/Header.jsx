@@ -37,16 +37,15 @@ const Header = () => {
         <span>Discover, Learn, Thrive: Dive into our Library!</span>
         <div>
           <BiPhoneCall />
-          <span>030339845224</span>
+          <span>+91 70215 77069</span>
           <AiOutlineMail />
-          <span>ggclib@gmail.com</span>
+          <span>deepakghore26116@gmail.com</span>
         </div>
       </div>
 
       <nav className="bg__accent">
         <div className="logo text__primary">
-          <GiBookAura className="logo__icon" />
-          <span>GGC Library</span>
+          <span>VIDYA BHUSHAN</span>
         </div>
         <div className="center">
           <NavLink to="/" className="text__color ">
@@ -54,10 +53,7 @@ const Header = () => {
           </NavLink>
           <NavLink to="/books" className="text__color ">
             Books
-          </NavLink>
-          <NavLink to="/ebooks" className="text__color ">
-            EBooks
-          </NavLink>
+          </NavLink>  
           <NavLink to="/about-us" className="text__color ">
             About Us
           </NavLink>
@@ -66,14 +62,7 @@ const Header = () => {
           </NavLink>
         </div>
         <div className="right">
-          <button
-            className="btn__icon text__color "
-            onClick={() => {
-              dispatch(toggleTheme());
-            }}
-          >
-            {theme === "dark" ? <FaRegMoon /> : <FiSun />}
-          </button>
+
           {auth?.isAuth ? (
             <div
               className="profile text__color"

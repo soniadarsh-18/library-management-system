@@ -27,7 +27,7 @@ const ManageMessages = () => {
       replyMessage: replyMessage,
     });
     toast.promise(promise, {
-      loading: "Lading...",
+      loading: "Loading...",
       success: (data) => {
         setShowReadModal(false);
         setShowReplyModal(false);

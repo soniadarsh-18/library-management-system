@@ -65,7 +65,7 @@ const BookReader = () => {
           <div
             style={{
               alignItems: "center",
-              backgroundColor: "#4cceac",
+              backgroundColor: "#1B3C3F",
               color: "white",
               display: "flex",
               padding: "0.25rem",

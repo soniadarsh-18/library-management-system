@@ -130,9 +130,9 @@ const ManageIssueBooks = () => {
           >
             Issue Book
           </Link>
-          <button className="btn btn__secondary" onClick={handleExport}>
+          {/* <button className="btn btn__secondary" onClick={handleExport}>
             Export to CSV
-          </button>
+          </button> */}
         </div>
       </div>
 

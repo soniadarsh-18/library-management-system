@@ -54,31 +54,7 @@ const AdminHome = () => {
         />
       </div>
 
-      {/* BAR AND PIE CHART */}
-      <div className="chart__wrapper">
-        <div className="barchart__container">
-          <BarChart
-            title="NUMBER OF BORROWED BOOKS CHART"
-            labels={
-              data?.last12MonthsData &&
-              Object.keys(data?.last12MonthsData).reverse()
-            }
-            values={
-              data?.last12MonthsData &&
-              Object.values(data?.last12MonthsData).reverse()
-            }
-            label="BORROWED BOOKS"
-          />
-        </div>
-        <div className="piechart__container">
-          <PieChart
-            labels={data?.statusCounts && Object.keys(data?.statusCounts)}
-            values={data?.statusCounts && Object.values(data?.statusCounts)}
-            title={"BOOK STATUS  CHART"}
-            label="STATUS"
-          />
-        </div>
-      </div>
+      <br></br>
 
       {/* LAST 5 ISSUED BOOKS */}
       <h2 style={{ textTransform: "uppercase", fontWeight: "400" }}>

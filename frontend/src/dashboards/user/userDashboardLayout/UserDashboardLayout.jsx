@@ -19,7 +19,7 @@ const UserDashboardLayout = () => {
       listItems:[
         {
           id : 1,
-          text : "Dashbaord",
+          text : "Dashboard",
           link : "/user/dashboard",
           icon : <MdOutlineDashboard/>
         }
@@ -47,12 +47,6 @@ const UserDashboardLayout = () => {
           link : "returned-books",
           icon : <ImBooks/>
         },
-        {
-          id : 4,
-          text : "Recommended",
-          link : "borrowed-books",
-          icon : <FaBook/>
-        }
       ] 
     },
     {
