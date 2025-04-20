@@ -69,12 +69,6 @@ const menu = [
         link: "manage-students",
         icon: <FaUsers />,
       },
-      {
-        id: 2,
-        text: "Teachers",
-        link: "manage-teachers",
-        icon: <FaUsers />,
-      },
     ],
   },
   {
