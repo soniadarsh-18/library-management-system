@@ -82,3 +82,8 @@ app.use("/api/clearance", clearanceRouter);
 
 /* ERROR HANLDER MIDDLEWARE */
 app.use(errorHandlerMiddleware);
+
+app.get("/", (req, res) => {
+  res.send("Backend is working ✅");
+});
+
