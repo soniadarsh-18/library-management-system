@@ -1,10 +1,10 @@
 import axios from "axios";
 
 // create instance of axios
-export const BASE_URL = "https://library-management-system-production-41e8.up.railway.app/";
+export const BASE_URL = "http://localhost:5000";
 
 export const api = axios.create({
-  baseURL: "https://library-management-system-production-41e8.up.railway.app//api",
+  baseURL: "http://localhost:5000/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
@@ -236,7 +236,7 @@ api.interceptors.response.use(
       originalRequest.isRetry = true;
       // refresh token request
       try {
-        await axios.get("https://library-management-system-production-41e8.up.railway.app//api/auth/refresh-tokens", {
+        await axios.get("http://localhost:5000/api/auth/refresh-tokens", {
           withCredentials: true,
         });
 

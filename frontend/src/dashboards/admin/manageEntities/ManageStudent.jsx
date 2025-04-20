@@ -268,8 +268,8 @@ const ManageStudent = () => {
                             fatherName: i.fatherName,
                             email: i.email,
                             rollNumber: i.rollNumber,
-                            batch: i.batch._id,
-                            departement: i.departement._id,
+                            batch: i.batch?._id || "",
+                            departement: i.departement?._id || "",
                           });
                           setShowUpdateModel(true);
                         }}
