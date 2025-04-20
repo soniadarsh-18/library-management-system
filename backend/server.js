@@ -29,8 +29,12 @@ app.use(express.json({ limit: "5mb" }));
 
 const corsOptions = {
   credentials: true,
-  origin: ["http://localhost:5173"],
+  origin: [
+    "http://localhost:5173",
+    "https://vidya-bhushan-lms.netlify.app",
+  ],
 };
+
 app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
